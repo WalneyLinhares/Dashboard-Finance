@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Painel Financeiro</h1>
+    </header>
+
+    <section class="summary">
+        <div class="card">
+            <h3>Entradas</h3>
+            <p id="incomes-display" class="positive">R$ 0,00</p>
+        </div>
+        <div class="card">
+            <h3>Saídas</h3>
+            <p id="expenses-display" class="negative">R$ 0,00</p>
+        </div>
+        <div class="card highlight">
+            <h3>Saldo Total</h3>
+            <p id="balance-display">R$ 0,00</p>
+        </div>
+    </section>
+
+    <main class="dashboard-grid">
+        <section class="form-section">
+            <h2>Nova Transação</h2>
+            <form id="transaction-form">
+                <div class="input-group">
+                    <label for="description">Descrição</label>
+                    <input type="text" id="description" placeholder="Ex: Salário, Internet..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount">Valor (R$)</label>
+                    <input type="text" id="amount" placeholder="0.00" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="type">Tipo</label>
+                    <select id="type" required>
+                        <option value="income">Receita (Entrada)</option>
+                        <option value="expense">Despesa (Saída)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Categoria</label>
+                    <input type="text" id="category" placeholder="Ex: Alimentação, Lazer..." required>
+                </div>
+
+                <button type="submit" id="submit-btn">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Extrato Recente</h2>
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Buscar por descrição..." />
+
+                <label for="filter-type">Filtrar por:</label>
+                <select id="filter-type">
+                    <option value="all">Todas as transações</option>
+                    <option value="income">Apenas Entradas</option>
+                    <option value="expense">Apenas Saídas</option>
+                    <option value="bigger">Maior Valor</option>
+                    <option value="smaller">Menor Valor</option>
+                    <option value="date-recent">Data Mais Recente</option>
+                    <option value="date-old">Data Mais Antiga</option>
+                </select>
+            </div>
+            <div class="table-container">
+                <table id="transaction-table">
+                    <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                        <th>Ação</th>
+                    </tr>
+                    </thead>
+                    <tbody id="transaction-list">
+                    <!-- O JS vai criar as linhas (<tr>) e colocar aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
