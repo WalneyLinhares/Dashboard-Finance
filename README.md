@@ -34,9 +34,3 @@ Aplicação web para visualização organizada de receitas, despesas e informaç
 ## Demo
 
 Disponível em: https://walneylinhares.github.io/Dashboard-Finance/
-
-## Autor
-
-Walney Linhares
-- LinkedIn: https://www.linkedin.com/in/walney-linhares-5541b9381
-- GitHub: https://github.com/WalneyLinhares
